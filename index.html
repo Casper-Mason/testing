@@ -21,15 +21,10 @@
     
    <script>
      var number = 0;
-     document.write(number);
-     function number_update(){
-       document.getElementById("number button").innerHTML = "Number is " number ".";
-       number = 1;
-       
-     }
    </script> 
     
-<button onmousedown = "<script>number_update()</script>"><p id = "number button"></p></button>
+<button onmousedown = "<script>document.getElementById("number button").innerHTML = "Number is " number ".";
+       number = 1;</script>"><p id = "number button">Number???</p></button>
 
   </body>
 </html>
