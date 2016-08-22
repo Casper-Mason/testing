@@ -23,8 +23,19 @@
      var number = 0;
    </script> 
     
-    <button onmousedown = '<script>number = 1;</script>'>Number is <script>number</script>.</button>
-       update 3
+    <button onmousedown = '<script>number = 1;</script>'>Number is <script>number;</script>. <p id="demo"></p></button>
+
+    <br /><br />update 4
+    
+    <br /><br /><p id="demo"></p>
+
+    <script>
+      var price1 = 5;
+      var price2 = 6;
+      var total = price1 + price2;
+      document.getElementById("demo").innerHTML =
+      "The total is: " + total;
+    </script>
 
   </body>
 </html>
