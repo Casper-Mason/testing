@@ -22,30 +22,14 @@
    <script>
      var number = 0;
      document.write(number);
+     function number_update(){
+       document.getElementById("number button").innerHTML = "Number is " number ".";
+       number = 1;
+       
+     }
    </script> 
     
-<button onmousedown="number = number + 1">Number is <script>document.write(number); number = number + 1;</script>.</button>
-
-
-<p id="demo"></p>
-
-<script>
-document.getElementById("demo").innerHTML = "Hello Dolly.";
-</script>
-
-
-<br /><br />
-
-<button type="button"
-onclick="document.getElementById('time').innerHTML = Date()">
-Click me to display Date and Time.</button>
-
-<p id="time"></p>
-
-<p id="updateable">Updatable text</p>
-
-<button type="button" onclick="document.getElementById('updateable').innerHTML = 'Hello JghfthfhavaScript!'"><p id="updateable">Updatable text</p></button>
-
+<button onmousedown = "<script>number_update()</script>"><p id = "number button"></p></button>
 
   </body>
 </html>
