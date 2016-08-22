@@ -9,6 +9,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="javascripts/respond.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  
+  <script>
+    var number = 0;
+    document.getElementById("1").innerHTML = 5 + 6;
+    var button_1 = "Number is " number ".";
+  </script>
+  
 </head>
 
 <body>
@@ -16,20 +23,14 @@
   
   <br /><br /><br /><br />
   
-  <button onmousedown = '<script>number = 1;</script>'><p id="1"></p></button>
+  <button onmousedown = '<script>number = 1;</script>'><script>button_1;</script></button>
   <button><p id="2"></p></button>
 
   <br /><br />
   
-  update 12
+  update 13
   
   <br /><br />
-
-  <script>
-    var number = 0;
-    document.getElementById("1").innerHTML = 5 + 6;
-    document.getElementById("2").innerHTML = "Number is " number ".";
-  </script>
   
   </center>
 </body>
