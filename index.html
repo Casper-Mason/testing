@@ -1,40 +1,33 @@
+
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <title>Testing by CasperMason</title>
-  <link rel="stylesheet" href="stylesheets/styles.css">
-  <link rel="stylesheet" href="stylesheets/github-dark.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script src="javascripts/respond.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  
-  <script>
-  
-  function say(a, b){
-    document.getElementById(a).innerHTML = b;
-  }
-    var number = 0;
-    document.getElementById("1").innerHTML = 5 + 6;
-    var button_1 = "Number is " + number + ".";
-  </script>
-  
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Testing by CasperMason</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-<body>
-  <center>
-  
-  <br /><br /><br /><br />
-  
-  <button><p = id><script>number + button_1; say("poop", number);</script></p></button>
+  </head>
+  <body>
+    
+   <script>
+     var number = 0;
+   </script> 
+    
+<button onmousedown="number += 1"><p id="number"></p></button>
+<script>document.getElementById('demo').innerHTML = Date()</script>
+<br /><br />
 
-  <br /><br />
-  
-  update 18
-  
-  <br /><br />
-  
-  </center>
-</body>
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+
+
+  </body>
 </html>
