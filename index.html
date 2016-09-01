@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <title>Testing by Casper Mason</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   
   <style>
     
@@ -26,6 +27,14 @@
     
   </style>
   
+  <script>
+$(document).ready(function(){
+    $("p").click(function(){
+        $(this).hide();
+    });
+});
+</script>
+  
 </head>
 
 <?php flush(); ?>
@@ -33,13 +42,19 @@
 <body>
   <center>
   
+  <p>If you click on me, I will disappear.</p>
+  <p>Click me away!</p>
+  <p>Click me too!</p>
+  
   <h1>Just a test</h1>
   
-  <p>Update number 50</p>
+  <p>Update number 51</p>
   
   <button id="button" onclick="location.reload();">Refresh page</button>
   
   <button id="button" onclick="window.alert('I\'m a popup');">Create a popup</button>
+  
+  <button id="button" onclick=""></button>
   
   </center>
 </body>
