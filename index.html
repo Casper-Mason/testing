@@ -44,7 +44,7 @@ $(document).ready(function(){
   
   <h1>Just a test</h1>
   
-  <p>Update number 58</p>
+  <p>Update number 59</p>
   
   <button id="button" onclick="location.reload();">Refresh page</button>
   
@@ -77,8 +77,8 @@ $(document).ready(function(){
   <svg width="0" height="0">
   <defs>
     <radialGradient id="bluerad" cx="50%" cy="50%" r="50%" fx="40%" fy="60%">
-      <stop offset="0%" style="stop-color:rgb(30,130,180);stop-opacity:0.1" />
-      <stop offset="80%" style="stop-color:rgb(50,150,200);stop-opacity:1" />
+      <stop offset="0%" style="stop-color:rgba(30,130,180,0.1)" />
+      <stop offset="80%" style="stop-color:rgba(50,150,200,1)" />
     </radialGradient>
     
     <radialGradient id="pinkrad" cx="50%" cy="50%" r="50%" fx="40%" fy="60%">
@@ -86,14 +86,9 @@ $(document).ready(function(){
       <stop offset="80%" style="stop-color:rgba(200,70,100,1)" />
     </radialGradient>
     
-    <radialGradient id="bluerad" cx="50%" cy="50%" r="50%" fx="40%" fy="60%">
-      <stop offset="0%" style="stop-color:rgb(30,130,180);stop-opacity:0.1" />
-      <stop offset="80%" style="stop-color:rgb(50,150,200);stop-opacity:1" />
-    </radialGradient>
-    
-    <radialGradient id="bluerad" cx="50%" cy="50%" r="50%" fx="40%" fy="60%">
-      <stop offset="0%" style="stop-color:rgb(30,130,180);stop-opacity:0.1" />
-      <stop offset="80%" style="stop-color:rgb(50,150,200);stop-opacity:1" />
+    <radialGradient id="whiterad" cx="50%" cy="50%" r="50%" fx="40%" fy="60%">
+      <stop offset="0%" style="stop-color:rgba(235,235,235,0.1)" />
+      <stop offset="80%" style="stop-color:rgba(255,255,255,1)" />
     </radialGradient>
 
     <linearGradient id="bluelin" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -121,7 +116,12 @@ $(document).ready(function(){
   <polygon points="51,10 70,2  76.5,21 99,31  89.5,61 99,90  76.5,100 70,119  51,111 31,119  24.5,100 2,90  11.5,61 2,31  24.5,21 31,2" fill="rgba(50,150,200,0.7)" />
   <polygon points="51,10 76.5,21 89.5,61 76.5,100 51,111 24.5,100 11.5,61 24.5,21" fill="url(#bluelin)" />
 </svg>
-  
+
+<svg width="102" height="122">
+  <ellipse cx="51" cy="61" rx="50" ry="60" stroke-width="2px" stroke="gray" fill="url(#whiterad)" />
+  <circle cx="60" cy="30" r="20" fill="rgba(255,255,255,0.2)" />
+  <circle cx="70" cy="60" r="10" fill="rgba(255,255,255,0.2)" />
+</svg>
   
 </p>
 </center>
