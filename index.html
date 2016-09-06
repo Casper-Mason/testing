@@ -36,12 +36,7 @@
     </radialGradient>
 
 
-    <linearGradient id="bluelin" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-opacity="0.05" stop-color="white" />
-      <stop offset="100%" stop-opacity="0.4" stop-color="white" />
-    </linearGradient>
-    
-    <linearGradient id="pinklin" x1="0%" y1="100%" x2="100%" y2="0%">
+    <linearGradient id="linear" x1="0%" y1="100%" x2="100%" y2="0%">
       <stop offset="0%" stop-opacity="0.05" stop-color="white" />
       <stop offset="100%" stop-opacity="0.4" stop-color="white" />
     </linearGradient>
@@ -66,7 +61,7 @@ $(document).ready(function(){
   
   <h1>Just a test</h1>
   
-  <p>Update number 63</p>
+  <p>Update number 64</p>
   
   <button id="button" onclick="location.reload();">Refresh page</button>
   
@@ -75,13 +70,7 @@ $(document).ready(function(){
   <p>
 
 <svg width="102" height="122">
-  <ellipse cx="51" cy="61" rx="50" ry="60" stroke-width="2px" stroke="gray" fill="url(#bluerad)" />
-  <circle cx="60" cy="30" r="20" fill="white" opacity="0.2" />
-  <circle cx="70" cy="60" r="10" fill="white" opacity="0.2" />
-</svg>
-
-<svg width="102" height="122">
-  <ellipse cx="51" cy="61" rx="50" ry="60" stroke-width="2px" stroke="gray" fill="url(#pinkrad)" />
+  <ellipse cx="51" cy="61" rx="50" ry="60" stroke-width="2px" stroke="gray" fill="url(#blackrad)" />
   <circle cx="60" cy="30" r="20" fill="white" opacity="0.2" />
   <circle cx="70" cy="60" r="10" fill="white" opacity="0.2" />
 </svg>
@@ -89,25 +78,19 @@ $(document).ready(function(){
 <svg width="102" height="122">
   <polygon points="1,31 31,1   70,1 100,31   100,90, 70,120  31,120 1, 90" fill="rgb(50,150,200)" fill-opacity="0.5" stroke-width="2px" stroke="gray" />
   <polygon points="51,10 70,2  76.5,21 99,31  89.5,61 99,90  76.5,100 70,119  51,111 31,119  24.5,100 2,90  11.5,61 2,31  24.5,21 31,2" fill="rgba(50,150,200,0.7)" />
-  <polygon points="51,10 76.5,21 89.5,61 76.5,100 51,111 24.5,100 11.5,61 24.5,21" fill="url(#bluelin)" />
+  <polygon points="51,10 76.5,21 89.5,61 76.5,100 51,111 24.5,100 11.5,61 24.5,21" fill="url(#linear)" />
 </svg>
 
 <svg width="102" height="122">
-  <ellipse cx="51" cy="61" rx="50" ry="60" stroke-width="2px" stroke="gray" fill="url(#whiterad)" />
+  <ellipse cx="51" cy="61" rx="50" ry="60" stroke-width="2px" stroke="gray" fill="url(#bluerad)" />
   <circle cx="60" cy="30" r="20" fill="white" opacity="0.2" />
   <circle cx="70" cy="60" r="10" fill="white" opacity="0.2" />
 </svg>
 
 <svg width="102" height="122">
-  <polygon points="1,31 31,1   70,1 100,31   100,90, 70,120  31,120 1, 90" fill="rgb(200,70,100)" fill-opacity="0.5" stroke-width="2px" stroke="gray" />
+  <polygon points="1,31 31,1   70,1 100,31   100,90, 70,120  31,120 1, 90" fill="rgb(255,255,255)" fill-opacity="0.5" stroke-width="2px" stroke="gray" />
   <polygon points="51,10 70,2  76.5,21 99,31  89.5,61 99,90  76.5,100 70,119  51,111 31,119  24.5,100 2,90  11.5,61 2,31  24.5,21 31,2" fill="rgba(200,70,100,0.7)" />
-  <polygon points="51,10 76.5,21 89.5,61 76.5,100 51,111 24.5,100 11.5,61 24.5,21" fill="url(#pinklin)" />
-</svg>
-
-<svg width="102" height="122">
-  <ellipse cx="51" cy="61" rx="50" ry="60" stroke-width="2px" stroke="gray" fill="url(#blackrad)" />
-  <circle cx="60" cy="30" r="20" fill="white" opacity="0.2" />
-  <circle cx="70" cy="60" r="10" fill="white" opacity="0.2" />
+  <polygon points="51,10 76.5,21 89.5,61 76.5,100 51,111 24.5,100 11.5,61 24.5,21" fill="url(#linear)" />
 </svg>
   
 </p>
