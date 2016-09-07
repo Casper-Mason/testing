@@ -5,7 +5,7 @@ Currently the plan is to make a simple breeding game.
 
 So far I have successfully made pretty SVG art of gemstones.
 
-Some people like to save I'm distractable.
+Some people like to say I'm distractable.
 
 I'm here to tell you that's not true at all.
 
@@ -21,7 +21,9 @@ What do you think? If you can't consume things created by the body of an animal 
 
 ...does that mean you're not vegan if you were breastfed by your mom?
 
-Since everyone knows humans are just another species of animal. We belong to the Animal Kingdom after all.
+Since everyone knows humans are just another species of animal.
+
+We belong to the Animal Kingdom after all.
 
 Maybe the issue here is consent.
 
@@ -45,9 +47,9 @@ I'd ask them to dig up precious gemstones.
 
 Gems are useless to ants.
 
-There are places in the world where ant colonies will dig up rubies and deposit them on the surface.
+There are places in the world where ant colonies will dig up garnets and deposit them on the surface.
 
-To the ants, its just a big rock in the way of their mining.
+To the ants, it's just a big rock in the way of their mining.
 
 But with better communication, they will probably consider gems to have a high trade value.
 
