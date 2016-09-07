@@ -65,7 +65,7 @@ We might ruin their colonies along the way.
 
 I'm sure the ants would be upset and fight back.
 
-Did you know that ants outweight humans, when all individual weights are totalled?
+Did you know that ants outweigh humans, when all individual weights are totalled?
 
 It might lead to a huge interspecies war.
 
