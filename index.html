@@ -9,7 +9,7 @@
   
   <style>
   body { background-color: #333; color: #eee; font-family: "Monaco"; margin: 5%; }
-  button{ background-color: #ccc; border-color: #333; border-radius: 10px; border-style: double; border-width: 5px;
+  .button{ background-color: #ccc; border-color: #333; border-radius: 10px; border-style: double; border-width: 5px;
   color: #111; }
   </style>
   
@@ -20,27 +20,15 @@
       <stop offset="80%" stop-opacity="1" stop-color="rgb(50,150,200)" />
     </radialGradient>
     
-    <radialGradient id="pinkrad" cx="50%" cy="50%" r="50%" fx="40%" fy="60%">
-      <stop offset="0%" stop-opacity="0.1" stop-color="rgb(180,50,80)" />
-      <stop offset="80%" stop-opacity="1" stop-color="rgb(200,70,100)" />
-    </radialGradient>
-    
-    <radialGradient id="whiterad" cx="50%" cy="50%" r="50%" fx="40%" fy="60%">
-      <stop offset="0%" stop-opacity="0.1" stop-color="rgb(235,235,235)" />
-      <stop offset="80%" stop-opacity="1" stop-color="white" />
-    </radialGradient>
-    
     <radialGradient id="blackrad" cx="50%" cy="50%" r="50%" fx="40%" fy="60%">
       <stop offset="0%" stop-opacity="0.1" stop-color="black" />
       <stop offset="80%" stop-opacity="1" stop-color="rgb(10,10,10)" />
     </radialGradient>
 
-
     <linearGradient id="linear" x1="0%" y1="100%" x2="100%" y2="0%">
       <stop offset="0%" stop-opacity="0.05" stop-color="white" />
       <stop offset="100%" stop-opacity="0.4" stop-color="white" />
     </linearGradient>
-
   </defs>
   </svg>
   
@@ -59,17 +47,7 @@ $(document).ready(function(){
 <body>
   <center>
   
-  <h1>Just a test</h1>
-  
-  <p>Update number 68</p>
-  
-  <button id="button" onclick="location.reload();">Refresh page</button>
-  
-  <button id="button" onclick="window.alert('I\'m a popup');">Create a popup</button>
-  
-  <p>
-
-<svg width="102" height="122">
+  <svg width="102" height="122">
   <ellipse cx="51" cy="61" rx="50" ry="60" stroke-width="2px" stroke="gray" fill="url(#blackrad)" />
   <circle cx="60" cy="30" r="20" fill="white" opacity="0.2" />
   <circle cx="70" cy="60" r="10" fill="white" opacity="0.2" />
@@ -93,12 +71,14 @@ $(document).ready(function(){
   <polygon points="51,10 76.5,21 89.5,61 76.5,100 51,111 24.5,100 11.5,61 24.5,21" fill="url(#linear)" />
 </svg>
   
-</p>
-<p><svg xmlns="http://www.w3.org/2000/svg"
- xmlns:xlink="http://www.w3.org/1999/xlink" 
- width="300" 
- height="300">
-</svg></p>
+  <h1>Just a test</h1>
+  
+  <p>Update number 69</p>
+  
+  <button class="button" onclick="location.reload();">Refresh page</button>
+  
+  <button class="button" onclick="window.alert('I\'m a popup');">Create a popup</button>
+
 
 </center>
 
