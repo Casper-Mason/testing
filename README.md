@@ -41,7 +41,7 @@ They're so smart and industrious.
 
 And so tiny.
 
-I could offer the ants easy acces to food and protection, in return for work.
+I could offer the ants easy access to food and protection, in return for work.
 
 I'd ask them to dig up precious gemstones.
 
