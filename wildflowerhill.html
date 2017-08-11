@@ -18,7 +18,7 @@
 </head>
 <script>
 
-//var earthEnergy = 0; // used to convert into earthMagic over time of more than 1 sec
+var earthEnergy = 0; // used to convert into earthMagic over time of more than 1 sec
 var earthMagic = 0; // spell currency
 var freshFlowers = 0; // material
 var driedFlowers = 0; // material
@@ -37,7 +37,7 @@ function dry() { // flip toggle on generating dry flowers from fresh ones
 }
 
 window.setInterval(function () { // the game timer
-	var earthEnergy++;
+	earthEnergy++;
 	if (earthEnergy == 10) {earthMagic++; earthEnergy = 0;}
 	
 	if (freshFlowers > 1 && drying == true) {driedFlowers++; freshFlowers -= 2;}
@@ -52,7 +52,7 @@ window.setInterval(function () { // the game timer
 <body>
 <center>
 	<h1>Wildflower Hill</h1>
-	<p> (-@ ,@) .oO( v0.3.1 )</p>
+	<p> (-@ ,@) .oO( v0.3.2 )</p>
 	
 	<p id="message">...</p>
 	
