@@ -22,15 +22,17 @@
 
   var count = 0;
   
+  function increase() {
+      count += 1;
+      document.getElementById("count").innerHTML = count;
+    }
   
   $(document).ready(function(){
     $("p").click(function(){
         $(this).hide();
     });
+  });
   
-  
-  
-});
 </script>
  
 
@@ -44,15 +46,15 @@
   
   <h1>Just a test</h1>
   
-  <p>Update number 84</p>
+  <p>Update number 85</p>
   
   <button class="button" onclick="location.reload();">Refresh page</button>
   
   <button class="button" onclick="window.alert('I\'m a popup');">Create a popup</button>
     
-  <button class="button" onclick="count += 1; document.getElementById("count").innerHTML = count;">Count +1</button>
+  <button class="button" onclick="increase()">Count +1</button>
     
-    <div id="count"><p>here is where it is</p></div>
+  <p id="count">here is where it is</p>
 
 
 </center>
