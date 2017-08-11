@@ -8,16 +8,25 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   
   <style>
-  body { background-color: #333; color: #eee; font-family: "Monaco"; margin: 5%; }
-  .button{ background-color: #ccc; border-color: #333; border-radius: 10px; border-style: double; border-width: 5px;
-  color: #111; }
+  body {
+		background-color: #ab8;
+		color: #786;
+		font-family: "Monaco";
+		margin: 5%;
+		}
+		
+  .button{ background-color: #786;
+		border-color: #786;
+		border-radius: 10px;
+		border-style: double;
+		border-width: 5px;
+  	color: #ab8;
+		}
+		
   </style>
   
- 
 </head>
-
 <?php flush(); ?>
-
 <script>
   var count = 0;
   
@@ -29,40 +38,22 @@
       }
     }
   
-  $(document).ready(function(){
-    $("p").click(function(){
-        $(this).hide();
-    });
-  });
-  
 </script>
- 
-
 <body>
-  <center>
-    
-    
-  <br />
- 
-    
-  
-  <h1>Just a test</h1>
-  
-  <p>Update number 88</p>
-  
-  <button class="button" onclick="location.reload();">Refresh page</button>
-  
-  <button class="button" onclick="window.alert('I\'m a popup');">Create a popup</button>
-    
-  <button class="button" onclick="increase()">Count +1</button>
-    
-  <p id="count">here is where it is</p>
-    <div id="count">count div</div>
-    
-    <p id="message">message box</p><p id="message">message box</p><p id="message">message box</p><p id="message">message box</p>
+<center>
+	<br />
+	<h1>Wildflower Hill</h1>
+	<p> ( @ w @) -{ v.0.1.0 )</p>
+	
+	<p class="item">fresh flowers: 0</p>
+
+	<button class="button" onclick="increase()">Count +1</button>
+
+	<p id="count">0</p>
+
+	<p id="message">...</p>
 
 
 </center>
-
 </body>
 </html>
