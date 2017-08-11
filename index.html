@@ -25,6 +25,9 @@
   function increase() {
       count += 1;
       document.getElementById("count").innerHTML = count;
+      if (count == 10) {
+        document.getElementById("message").innerHTML = "You made it to ten!";
+      }
     }
   
   $(document).ready(function(){
@@ -46,7 +49,7 @@
   
   <h1>Just a test</h1>
   
-  <p>Update number 85</p>
+  <p>Update number 87</p>
   
   <button class="button" onclick="location.reload();">Refresh page</button>
   
@@ -55,6 +58,9 @@
   <button class="button" onclick="increase()">Count +1</button>
     
   <p id="count">here is where it is</p>
+    <div id="count">count div</div>
+    
+    <p id="message">message box</p>
 
 
 </center>
