@@ -19,12 +19,20 @@
 <?php flush(); ?>
 
 <script>
-$(document).ready(function(){
+
+  var count = 0;
+  
+  
+  $(document).ready(function(){
     $("p").click(function(){
         $(this).hide();
     });
+  
+  
+  
 });
 </script>
+ 
 
 <body>
   <center>
@@ -41,6 +49,8 @@ $(document).ready(function(){
   <button class="button" onclick="location.reload();">Refresh page</button>
   
   <button class="button" onclick="window.alert('I\'m a popup');">Create a popup</button>
+    
+  <button class="button" onclick="">Count +1</button>
 
 
 </center>
