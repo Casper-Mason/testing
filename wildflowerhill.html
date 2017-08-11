@@ -17,7 +17,7 @@
 		
   .button{
 	background-color: #786;
-	border-color: #786;
+	border-color: #ab8;
 	border-radius: 10px;
 	border-style: double;
 	border-width: 5px;
@@ -30,31 +30,39 @@
 <?php flush(); ?>
 <script>
 
-var count = 0;
-
-function increase() {
-	count += 1;
-	document.getElementById("fresh flower count").innerHTML = count;
-	document.getElementById("count").innerHTML = count;
+var freshFlowers = 0;
+var driedFlowers = 0;
+	
+function gather() {
+	freshFlowers += 1;
+	document.getElementById("fresh flower count").innerHTML = freshFlowers;
 	if (count == 10) {
 		document.getElementById("message").innerHTML = "You made it to ten!";
 	}
+}
+	
+function dry() {
+	driedFlowers += 1;
+	document.getElementById("dried flower count").innerHTML = driedFlowers;
 }
 
 </script>
 <body>
 <center>
 	<h1>Wildflower Hill</h1>
-	<p> (-@ ,@) .oO( v.0.1.7 )</p>
+	<p> (-@ ,@) .oO( v.0.2.0 )</p>
 	
-	<p class="item">fresh flowers: <span id="fresh flower count">count</span> <script>count</script></p>
+	<table style="width:100%; border:none; text-align:center; ">
+		<tr>
+			<td>fresh flowers: <span id="fresh flower count">count</span></td>
+			<td>dried flowers: <span id="dried flower count">count</span></td>
+		</tr>
+	</table>
 
-	<button class="button" onclick="increase()">Count +1</button>
-
-	<p id="count">0</p>
+	<button class="button" onclick="gather()">pick flowers</button>
+	<button class="button" onclick="dry()">set flowers to dry</button>
 
 	<p id="message">...</p>
-
 
 </center>
 </body>
