@@ -37,7 +37,7 @@ function dry() { // flip toggle on generating dry flowers from fresh ones
 */
 window.setInterval(function () { // the game timer
 	earthEnergy++;
-	if (earthEnergy == 100) {earthMagic++; earthEnergy = 0;}
+	if (earthEnergy == 10) {earthMagic++; earthEnergy = 0;}
 	
 	if (freshFlowers > 1 && drying == true) {driedFlowers++; freshFlowers -= 2;}
 	
@@ -51,7 +51,7 @@ window.setInterval(function () { // the game timer
 <body>
 <center>
 	<h1>Wildflower Hill</h1>
-	<p> (-@ ,@) .oO( v0.3.6 )</p>
+	<p> (-@ ,@) .oO( v0.3.7 )</p>
 	
 	<p id="message">...</p> <!-- narrative/notification area -->
 	
