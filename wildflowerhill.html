@@ -26,9 +26,10 @@ var drying = false; // toggle
 
 function gather() { // generate free flowers on click
 	freshFlowers += 1;
-	if (freshFlowers < 10) {
+	if (freshFlowers > 9) {
 		document.getElementById("message").innerHTML = "You made it to ten!";
 	}
+	document.getElementById("fresh flower count").innerHTML = freshFlowers;
 }
 	
 function dry() { // flip toggle on generating dry flowers from fresh ones
@@ -52,7 +53,7 @@ window.setInterval(function () { // the game timer
 <body>
 <center>
 	<h1>Wildflower Hill</h1>
-	<p> (-@ ,@) .oO( v0.3.2 )</p>
+	<p> (-@ ,@) .oO( v0.3.3 )</p>
 	
 	<p id="message">...</p>
 	
