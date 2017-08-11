@@ -18,46 +18,47 @@
 </head>
 <script>
 
-var freshFlowers = 0;
-var driedFlowers = 0;
-var car = 0;
+//var earthEnergy = 0; // used to convert into earthMagic over time of more than 1 sec
+var earthMagic = 0; // spell currency
+var freshFlowers = 0; // material
+var driedFlowers = 0; // material
+var drying = false; // toggle
 
-function gather() {
+function gather() { // generate free flowers on click
 	freshFlowers += 1;
-	update();
-	if (freshFlowers == 10) {
+	if (freshFlowers < 10) {
 		document.getElementById("message").innerHTML = "You made it to ten!";
 	}
 }
 	
-function dry() {
-	if (freshFlowers > 1) {
-		driedFlowers += 1;
-		freshFlowers -= 2;
-		update();
-	}
+function dry() { // flip toggle on generating dry flowers from fresh ones
+	if (drying == true) {drying = false; break;}
+	if (drying == false) {drying = true;}
 }
-	
-	function update() { // Any click should call this until I can figure out loops
-		document.getElementById("fresh flower count").innerHTML = freshFlowers;
-		document.getElementById("dried flower count").innerHTML = driedFlowers;
-	
-	}
 
-window.setInterval(function () {
-	update();
-	car++;
-	document.getElementById("car").innerHTML = car;
+window.setInterval(function () { // the game timer
+	var earthEnergy++;
+	if (earthEnergy == 10) {earthMagic++; earthEnergy = 0;}
+	
+	if (freshFlowers > 1 && drying == true) {driedFlowers++; freshFlowers -= 2;}
+	
+	document.getElementById("earth magic count").innerHTML = earthMagic;
+	document.getElementById("fresh flower count").innerHTML = freshFlowers;
+	document.getElementById("dried flower count").innerHTML = driedFlowers;
+	
 }, 1000);
 	
 </script>
 <body>
 <center>
 	<h1>Wildflower Hill</h1>
-	<p> (-@ ,@) .oO( v0.3.0 )</p>
+	<p> (-@ ,@) .oO( v0.3.1 )</p>
+	
+	<p id="message">...</p>
 	
 	<table style="width:50%; border:none; text-align:center; ">
 		<tr>
+			<td>earth magic: <span id="earth magic count">0</span>
 			<td>fresh flowers: <span id="fresh flower count">0</span></td>
 			<td>dried flowers: <span id="dried flower count">0</span></td>
 		</tr>
@@ -65,9 +66,6 @@ window.setInterval(function () {
 
 	<button class="button" onclick="gather()">pick flowers (+1)</button>
 	<button class="button" onclick="dry()">set flowers to dry (2⇾1)</button>
-
-	<p id="message">...</p>
-	<p id="car">...</p>
 
 </center>
 </body>
