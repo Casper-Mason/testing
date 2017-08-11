@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <title>Testing by Casper Mason</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  
+  <style>
+  body { background-color: #333; color: #eee; font-family: "Monaco"; margin: 5%; }
+  .button{ background-color: #ccc; border-color: #333; border-radius: 10px; border-style: double; border-width: 5px;
+  color: #111; }
+  </style>
+  
+ 
+</head>
+
+<?php flush(); ?>
+
+<script>
+  var count = 0;
+  
+  function increase() {
+      count += 1;
+      document.getElementById("count").innerHTML = count;
+      if (count == 10) {
+        document.getElementById("message").innerHTML = "You made it to ten!";
+      }
+    }
+  
+  $(document).ready(function(){
+    $("p").click(function(){
+        $(this).hide();
+    });
+  });
+  
+</script>
+ 
+
+<body>
+  <center>
+    
+    
+  <br />
+ 
+    
+  
+  <h1>Just a test</h1>
+  
+  <p>Update number 88</p>
+  
+  <button class="button" onclick="location.reload();">Refresh page</button>
+  
+  <button class="button" onclick="window.alert('I\'m a popup');">Create a popup</button>
+    
+  <button class="button" onclick="increase()">Count +1</button>
+    
+  <p id="count">here is where it is</p>
+    <div id="count">count div</div>
+    
+    <p id="message">message box</p><p id="message">message box</p><p id="message">message box</p><p id="message">message box</p>
+
+
+</center>
+
+</body>
+</html>
