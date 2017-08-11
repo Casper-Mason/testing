@@ -21,16 +21,16 @@
 
 var freshFlowers = 0;
 var driedFlowers = 0;
-	
+/*	
 while (true == true) {
     var car;
 	car += 1
 	document.getElementById("message").innerHTML = car;
 }
-	
+*/	
 function gather() {
 	freshFlowers += 1;
-	//
+	update();
 	if (freshFlowers == 10) {
 		document.getElementById("message").innerHTML = "You made it to ten!";
 	}
@@ -40,7 +40,7 @@ function dry() {
 	if (freshFlowers > 1) {
 		driedFlowers += 1;
 		freshFlowers -= 2;
-		//
+		update();
 	}
 }
 	
@@ -54,7 +54,7 @@ function dry() {
 <body>
 <center>
 	<h1>Wildflower Hill</h1>
-	<p> (-@ ,@) .oO( v.0.2.3 )</p>
+	<p> (-@ ,@) .oO( v.0.2.4 )</p>
 	
 	<table style="width:50%; border:none; text-align:center; ">
 		<tr>
