@@ -28,6 +28,7 @@
 </head>
 <?php flush(); ?>
 <script>
+window.onload = function() {
   var count = 0;
   
   function increase() {
@@ -37,14 +38,14 @@
         document.getElementById("message").innerHTML = "You made it to ten!";
       }
     }
-  
+}
 </script>
 <body>
 <center>
 	<h1>Wildflower Hill</h1>
-	<p> ( @ w @) -{ v.0.1.1 )</p>
+	<p> ( @ w @) -{ v.0.1.2 )</p>
 	
-	<p class="item">fresh flowers: count</p>
+	<p class="item">fresh flowers: <script>count</script></p>
 
 	<button class="button" onclick="increase()">Count +1</button>
 
