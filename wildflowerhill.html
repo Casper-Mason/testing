@@ -31,15 +31,15 @@ function gather() { // generate free flowers on click
 	}
 	document.getElementById("fresh flower count").innerHTML = freshFlowers;
 }
-	
+/*	
 function dry() { // flip toggle on generating dry flowers from fresh ones
 	if (drying == true) {drying = false; break;}
 	if (drying == false) {drying = true;}
 }
-
+*/
 window.setInterval(function () { // the game timer
 	earthEnergy++;
-	if (earthEnergy == 10) {earthMagic++; earthEnergy = 0;}
+	if (earthEnergy == 100) {earthMagic++; earthEnergy = 0;}
 	
 	if (freshFlowers > 1 && drying == true) {driedFlowers++; freshFlowers -= 2;}
 	
@@ -47,15 +47,15 @@ window.setInterval(function () { // the game timer
 	document.getElementById("fresh flower count").innerHTML = freshFlowers;
 	document.getElementById("dried flower count").innerHTML = driedFlowers;
 	
-}, 1000);
+}, 100);
 	
 </script>
 <body>
 <center>
 	<h1>Wildflower Hill</h1>
-	<p> (-@ ,@) .oO( v0.3.3 )</p>
+	<p> (-@ ,@) .oO( v0.3.4 )</p>
 	
-	<p id="message">...</p>
+	<p id="message"></p>
 	
 	<table style="width:50%; border:none; text-align:center; ">
 		<tr>
@@ -66,7 +66,7 @@ window.setInterval(function () { // the game timer
 	</table>
 
 	<button class="button" onclick="gather()">pick flowers (+1)</button>
-	<button class="button" onclick="dry()">set flowers to dry (2⇾1)</button>
+	<button class="button" onclick="drying = !drying;">set flowers to dry (2⇾1)</button>
 
 </center>
 </body>
