@@ -9,42 +9,43 @@
   
   <style>
   body {
-		background-color: #ab8;
-		color: #786;
-		font-family: "Monaco";
-		margin: 5%;
-		}
+	background-color: #ab8;
+	color: #786;
+	font-family: "Courier";
+	margin: 5%;
+	}
 		
-  .button{ background-color: #786;
-		border-color: #786;
-		border-radius: 10px;
-		border-style: double;
-		border-width: 5px;
+  .button{
+	background-color: #786;
+	border-color: #786;
+	border-radius: 10px;
+	border-style: double;
+	border-width: 5px;
   	color: #ab8;
-		}
+	}
 		
   </style>
   
 </head>
 <?php flush(); ?>
 <script>
+$(document).ready(function(){
+	var count = 0;
 
-var count = 0;
-
-function increase() {
-	count += 1;
-	document.getElementById("fresh flower count").innerHTML = count;
-	document.getElementById("count").innerHTML = count;
-	if (count == 10) {
-		document.getElementById("message").innerHTML = "You made it to ten!";
+	function increase() {
+		count += 1;
+		document.getElementById("fresh flower count").innerHTML = count;
+		document.getElementById("count").innerHTML = count;
+		if (count == 10) {
+			document.getElementById("message").innerHTML = "You made it to ten!";
+		}
 	}
-}
-
+});
 </script>
 <body>
 <center>
 	<h1>Wildflower Hill</h1>
-	<p> (-@ ,@) .oO( v.0.1.5 )</p>
+	<p> (-@ ,@) .oO( v.0.1.6 )</p>
 	
 	<p class="item">fresh flowers: <span id="fresh flower count">count</span> <script>count</script></p>
 
