@@ -42,7 +42,7 @@ function gather() {
 }
 	
 function dry() {
-	if (freshFlowers == >1) {
+	if (freshFlowers > 1) {
 		driedFlowers += 1;
 		freshFlowers -= 2;
 		document.getElementById("dried flower count").innerHTML = driedFlowers;
@@ -53,17 +53,17 @@ function dry() {
 <body>
 <center>
 	<h1>Wildflower Hill</h1>
-	<p> (-@ ,@) .oO( v.0.2.1 )</p>
+	<p> (-@ ,@) .oO( v.0.2.2 )</p>
 	
 	<table style="width:50%; border:none; text-align:center; ">
 		<tr>
-			<td>fresh flowers: <span id="fresh flower count">count</span></td>
-			<td>dried flowers: <span id="dried flower count">count</span></td>
+			<td>fresh flowers: <span id="fresh flower count">0</span></td>
+			<td>dried flowers: <span id="dried flower count">0</span></td>
 		</tr>
 	</table>
 
-	<button class="button" onclick="gather()">pick flowers (+1 fresh flower)</button>
-	<button class="button" onclick="dry()">set flowers to dry (+1 dried flower, -2 fresh flowers)</button>
+	<button class="button" onclick="gather()">pick flowers (+1)</button>
+	<button class="button" onclick="dry()">set flowers to dry (2⇾1)</button>
 
 	<p id="message">...</p>
 
