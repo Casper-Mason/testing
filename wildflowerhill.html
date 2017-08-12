@@ -11,7 +11,7 @@
   body { background-color: #ab8; color: #786; font-family: "Verdana"; margin: 5%; }
 		
   .button{ background-color: #786; border-color: #ab8; border-radius: 10px; border-style: double; border-width: 5px;
-  	color: #ab8; width: 10%; display: inline-block;}
+  	color: #ab8; width: 10em; height: 3em; display: inline-block;}
 		
   </style>
   
@@ -48,7 +48,7 @@ window.setInterval(function () { // the game timer
 <body>
 <center>
 	<h1>Wildflower Hill</h1>
-	<h5> (-@ ,@) .oO( v0.3.12 )</h2>
+	<h5> (-@ ,@) .oO( v0.3.13 )</h2>
 	
 	<p id="message">...</p> <!-- narrative/notification area -->
 	
@@ -63,11 +63,12 @@ window.setInterval(function () { // the game timer
 	<div class="button" onclick="gather()">pick flowers (+1)</div>
 	<div class="button" onclick="drying = !drying;">set flowers to dry (2⇾1)</div>
 
-	<div style="position: fixed; bottom: 0; width: 100%; text-align: left; text-shadow: 0 0 1px black;
-		    display: inline-block;">
+	<div style="position: fixed; bottom: 0; width: 100%; text-align: left;">
 		By 
-		<div style="color:#ADBED1;">⬤</div><div style="color:#928573;">⬤</div>
-		<div style="color:#FCD917;">⬤</div><div style="color:#261105;">⬤</div>
+		<div style="color:#ADBED1; display inline-block; text-shadow: 0 0 1px black;">⬤</div>
+		<div style="color:#928573; display:inline-block; text-shadow: 0 0 1px black;">⬤</div>
+		<div style="color:#FCD917; display:inline-block; text-shadow: 0 0 1px black;">⬤</div>
+		<div style="color:#261105; display:inline-block; text-shadow: 0 0 1px black;">⬤</div>
 		 August 2017
 	</div>
 </center>
