@@ -8,18 +8,40 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   
   <style>
-	body { background-color: #ab8; color: #786; font-family: "Verdana"; margin: 5%; }
+	body { background-color: #ab8;
+      color: #786; font-family: "Verdana"; font-size: 12px;
+      margin: 5%; }
 		
-	.button{ background-color: #786; border-color: #ab8; border-radius: 10px; border-style: double; border-width: 5px;
-		color: #ab8; width: 10em; height: 3em; display: inline-block;
+	.button{
+	  background-color: #786;
+      border-color: #ab8;
+      border-radius: 2em .5em 2em;
+      border-style: double;
+      border-width: 5px;
+      padding: 0.5em 1em 0.5em 1em;
+      color: #ab8;
+      display: inline-block;
+      
+      /* This prevents annoying highlighting while clicking. */
 		-webkit-user-select: none; /* webkit (safari, chrome) browsers */
 		-moz-user-select: none; /* mozilla browsers */
 		-khtml-user-select: none; /* webkit (konqueror) browsers */
-		-ms-user-select: none; /* IE10+ */}
+		-ms-user-select: none; /* IE10+ */
+    }
 	  
 	.color {
-		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
- }
+		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,
+          -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+    }
+      
+    #inventory p {
+      background-color: hsl(100, 25%, 75%);
+      border: 1px solid hsl(100, 25%, 45%);
+      border-radius: .5em 2.5em;
+      padding: 1em;
+      display: inline-block;
+            
+    }
 		
   </style>
   
@@ -42,7 +64,7 @@ function gather() { // generate free flowers on click
 	
 window.setInterval(function () { // the game timer
 	earthEnergy++;
-	if (earthEnergy == 10) {earthMagic++; earthEnergy = 0;}
+	if (earthEnergy == 1) {earthMagic++; earthEnergy = 0;}
 	
 	if (freshFlowers > 1 && drying == true) {driedFlowers++; freshFlowers -= 2;}
 	
@@ -56,15 +78,26 @@ window.setInterval(function () { // the game timer
 <body>
 <center>
 	<h1>Wildflower Hill</h1>
-	<h5> (-@ ,@) .oO( v0.3.16 )</h2>
+	<h5> (-@ ,@) .oO( v0.3.17 )</h2>
 	
 	<p id="message">...</p> <!-- narrative/notification area -->
+    <p>A warm breeze ruffles your clothes. Earth energy is strong today.
+      You decide to do some nature magic out on Wildflower Hill.</p>
+    <p>There are flowers everywhere, in many happy shapes and colors.
+    You put on your gloves and lay a cloth down.</p>
+  
+    <div id="inventory" style="width:50%; border:none; text-align:center; ">
+      <p><span id="earth magic count">0</span></br>earth magic</p>
+      <p><span id="fresh flower count">0</span></br>fresh flowers</p>
+      <p><span id="dried flower count">0</span></br>dried flowers</p>
+      <p>poob</p>
+    </div>
 	
 	<table style="width:50%; border:none; text-align:center; ">
 		<tr>
-			<td>earth magic: <span id="earth magic count">0</span>
-			<td>fresh flowers: <span id="fresh flower count">0</span></td>
-			<td>dried flowers: <span id="dried flower count">0</span></td>
+          <td>earth magic: <span id="earth magic count">0</span></td>
+		  <td>fresh flowers: <span id="fresh flower count">0</span></td>
+		  <td>dried flowers: <span id="dried flower count">0</span></td>
 		</tr>
 	</table>
 
