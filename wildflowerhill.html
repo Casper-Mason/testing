@@ -17,11 +17,13 @@
   
 </head>
 <script>
+	
 var earthEnergy = 0; // used to convert into earthMagic over time of more than 1 sec
 var earthMagic = 0; // spell currency
 var freshFlowers = 0; // material
 var driedFlowers = 0; // material
 var drying = false; // toggle
+	
 function gather() { // generate free flowers on click
 	freshFlowers += 1;
 	if (freshFlowers > 9) {
@@ -29,12 +31,7 @@ function gather() { // generate free flowers on click
 	}
 	document.getElementById("fresh flower count").innerHTML = freshFlowers;
 }
-/*	
-function dry() { // flip toggle on generating dry flowers from fresh ones
-	if (drying == true) {drying = false; break;}
-	if (drying == false) {drying = true;}
-}
-*/
+	
 window.setInterval(function () { // the game timer
 	earthEnergy++;
 	if (earthEnergy == 10) {earthMagic++; earthEnergy = 0;}
@@ -51,7 +48,7 @@ window.setInterval(function () { // the game timer
 <body>
 <center>
 	<h1>Wildflower Hill</h1>
-	<h2> (-@ ,@) .oO( v0.3.8 )</h2>
+	<h3> (-@ ,@) .oO( v0.3.9 )</h2>
 	
 	<p id="message">...</p> <!-- narrative/notification area -->
 	
@@ -66,7 +63,7 @@ window.setInterval(function () { // the game timer
 	<button class="button" onclick="gather()">pick flowers (+1)</button>
 	<button class="button" onclick="drying = !drying;">set flowers to dry (2⇾1)</button>
 
-	<div style="position: fixed; bottom: 0; width: 100%;">
+	<div style="position: fixed; bottom: 0; width: 100%; text-align: right;">
 		By 
 		<div style="color:#ADBED1 ; display: inline-block">⬤</div>
 		<div style="color:#928573 ; display: inline-block">⬤</div>
