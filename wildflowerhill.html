@@ -41,7 +41,6 @@
       border-radius: .5em 2.5em 0;
       padding: 1em;
       display: inline-block;
-            
     }
 		
   </style>
@@ -49,7 +48,7 @@
 </head>
 <script>
 	
-var earthEnergy = 0; // used to convert into earthMagic over time of more than 1 sec
+var earthEnergy = 0; // used to convert into earthMagic over time
 var earthMagic = 0; // spell currency
 var freshFlowers = 0; // material
 var driedFlowers = 0; // material
@@ -57,9 +56,6 @@ var drying = false; // toggle
 	
 function gather() { // generate free flowers on click
 	freshFlowers += 1;
-	if (freshFlowers > 9) {
-		document.getElementById("message").innerHTML = "You made it to ten!";
-	}
 	document.getElementById("fresh flower count").innerHTML = freshFlowers;
 }
 	
@@ -68,6 +64,10 @@ window.setInterval(function () { // the game timer
   if (earthEnergy == 1) {earthMagic++; earthEnergy = 0;}
 
   if (freshFlowers > 1 && drying == true) {driedFlowers++; freshFlowers -= 2;}
+  
+  if (freshFlowers > 9) {document.getElementById("message").innerHTML = "You made it to ten!";}
+  if (freshFlowers > 49) {document.getElementById("message").innerHTML = "This is getting serious :O";}
+  if (freshFlowers > 99) {document.getElementById("message").innerHTML = "Hello Babette! :D";}
 
   document.getElementById("earth magic count").innerHTML = earthMagic;
   document.getElementById("fresh flower count").innerHTML = freshFlowers;
@@ -81,7 +81,7 @@ window.setInterval(function () { // the game timer
 <body>
 <center>
 	<h1>Wildflower Hill</h1>
-	<h5> (-@ ,@) .oO( v0.3.18 )</h2>
+	<h5> (-@ ,@) .oO( v0.4.0 )</h2>
 	
 	<p id="message">...</p> <!-- narrative/notification area -->
     <p>You stand in the grassy plains, your forest home an hour's walk behind you.
@@ -90,10 +90,11 @@ window.setInterval(function () { // the game timer
     <p>There are flowers everywhere, in many happy shapes and colors.
     You put on your gloves and lay a cloth down.</p>
   
-    <div id="inventory" style="width:50%; border:none; text-align:center; ">
+    <div id="inventory" style="border:none; text-align:center; ">
       <p><span id="earth magic count">0</span></br>earth magic</p>
       <p><span id="fresh flower count">0</span></br>fresh flowers</p>
       <p><span id="dried flower count">0</span></br>dried flowers</p>
+
     </div>
 
 	<div class="button" onclick="gather()">pick flowers (+1)</div>
