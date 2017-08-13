@@ -7,19 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   
+  
+  <!--                                        [The CSS section]                                    -->
+  
+  
   <style>
-	body { background-color: hsl(80, 30%, 65%);
-      color: hsl(80, 15%, 40%); font-family: "Verdana"; font-size: 12px;
+	body { background-color: hsl(90, 30%, 65%);
+      color: hsl(90, 15%, 40%); font-family: "Verdana"; font-size: 12px; 
+      text-align: center;
       margin: 5%; }
 		
 	.button {
-	  background-color: hsl(80, 15%, 40%);
-      border-color: hsl(80, 30%, 65%);
+	  background-color: hsl(90, 15%, 40%);
+      border-color: hsl(90, 30%, 65%);
       border-radius: 2em .5em 2em 0;
       border-style: double;
       border-width: 5px;
       padding: 0.5em 1em 0.5em 1em;
-      color: hsl(80, 30%, 65%);
+      margin: 0.1em;
+      color: hsl(90, 30%, 65%);
       display: inline-block;
       
       /* This prevents annoying highlighting while clicking. */
@@ -28,24 +34,40 @@
 		-khtml-user-select: none;
 		-ms-user-select: none;
     }
+    
+    .button:hover {background-color:hsl(90, 15%, 30%);}
 	  
 	.color {
       text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,
           -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
     }
       
-    #inventory p {
-      background-color: hsl(100, 25%, 75%);
+    #materials p {
+      background-color: hsl(90, 25%, 75%);
       border: 1px solid;
-      border-color: hsl(80, 15%, 40%);
+      border-color: hsl(90, 15%, 40%);
       border-radius: .5em 2.5em 0;
       padding: 1em;
+      margin: 0.2em;
+      display: inline-block;
+    }
+    
+    #generators p {
+      border: 3px outset hsl(90, 25%, 75%);
+      border-radius: 0.7em;
+      border-collapse: collapse;
+      padding: 0.5em;
+      margin: 0.5em;
+      text-align: center;
       display: inline-block;
     }
 		
   </style>
   
-</head>
+  
+</head> <!--                                  [The Javascript section]                                    -->
+  
+  
 <script>
 	
 var earthEnergy = 0; // used to convert into earthMagic over time
@@ -58,10 +80,13 @@ function gather() { // generate free flowers on click
 	freshFlowers += 1;
 	document.getElementById("fresh flower count").innerHTML = freshFlowers;
 }
-	
+  
+function unlock(element) {document.getElementById(element).style.display = "inline-block";}
+
 window.setInterval(function () { // the game timer
   earthEnergy++;
   if (earthEnergy == 1) {earthMagic++; earthEnergy = 0;}
+  if (earthMagic > 4) {unlock("pick flowers");}
 
   if (freshFlowers > 1 && drying == true) {driedFlowers++; freshFlowers -= 2;}
   
@@ -78,27 +103,45 @@ window.setInterval(function () { // the game timer
 }, 1000);
 	
 </script>
+  
+  
+  <!--                                  [The HTML body section]                                    -->
+  
+  
 <body>
-<center>
 	<h1>Wildflower Hill</h1>
-	<h5> (-@ ,@) .oO( v0.4.0 )</h2>
+	<h5> (-@ ,@) .oO( v0.5.0 )</h2>
 	
 	<p id="message">...</p> <!-- narrative/notification area -->
     <p>You stand in the grassy plains, your forest home an hour's walk behind you.
       It's summer. A warm breeze ruffles your ragged clothes and straw hat.
-      You smile and hum as you channel some of the strong ambient magic.</p>
+      You smile and hum in the strong ambient magic.</p>
     <p>There are flowers everywhere, in many happy shapes and colors.
     You put on your gloves and lay a cloth down.</p>
   
-    <div id="inventory" style="border:none; text-align:center; ">
+    <br> <!-- Material Inventory -->
+  
+    <div id="materials" style="border:none; text-align:center; ">
       <p><span id="earth magic count">0</span></br>earth magic</p>
       <p><span id="fresh flower count">0</span></br>fresh flowers</p>
       <p><span id="dried flower count">0</span></br>dried flowers</p>
 
     </div>
 
-	<div class="button" onclick="gather()">pick flowers (+1)</div>
-	<div class="button" onclick="drying = !drying;">set flowers to dry (2⇾1)</div>
+    <br> <!-- Generator Inventory -->
+
+    <div id="generators">
+      <p>flower crown<br><small><em>earth magic speed +1</em></small></p>
+    </div>
+
+    <br> <!-- Button Inventory -->
+
+	<div class="button" id="pick flowers" style="display: none;" onclick="gather()">
+      pick flowers (+1)</div>
+	<div class="button" onclick="drying = !drying;">
+      set flowers to dry (2⇾1)</div>
+
+
 
   <!-- Attribution Footer -->
   <div style="position: fixed; bottom: 0; width: 100%; text-align: left;">
