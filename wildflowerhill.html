@@ -20,6 +20,15 @@
       text-align: center;
       margin: 5%;
     }
+    
+    #narrative {
+      background-color: hsl(90, 25%, 75%);
+      border: 1px solid hsl(90, 15%, 40%);
+      height: 6em;
+      padding: 0 .5em .5em .5em;
+      overflow: auto;
+      text-align: left;
+    }
 		
 	.button {
 	  background-color: hsl(90, 15%, 40%);
@@ -99,11 +108,12 @@ function meditate() { // Akin to "research" in other games. Unlocks new elements
         unlock("pick flowers"); unlock("fresh flowers");
         break;
       case 1:
-        unlock("dry flowers"); unlock("dried flowers");
-        break;
-      case 2:
         unlock("make a flower crown");
         break;
+      case 2:
+        unlock("dry flowers"); unlock("dried flowers");
+        break;
+
     }
   
     earthMagic -= meditationCost;
@@ -157,15 +167,18 @@ window.setInterval(function () { // the game timer
   
 <body>
 	<h1>Wildflower Hill</h1>
-	<h5> (-@ ,@) .oO( v0.6.5 )</h2>
-	
+  
+    <div id="menu">menu</div>
+  
 	<p id="message">...</p> <!-- narrative/notification area -->
   
-    <p>You stand in the grassy plains, your forest home an hour's walk behind you.
+    <div id="narrative">
+      <p>You stand in the grassy plains, your forest home an hour's walk behind you.
       It's summer. A warm breeze ruffles your ragged clothes and straw hat.
       You smile and hum in the strong ambient magic.</p>
-    <p>There are flowers everywhere, in many happy shapes and colors.
-    You put on your gloves and lay a cloth down.</p>
+    <!--p>There are flowers everywhere, in many happy shapes and colors.
+    You put on your gloves and lay a cloth down.</p-->
+    </div>
   
     <br> <!-- Material Inventory -->
   
@@ -198,11 +211,11 @@ window.setInterval(function () { // the game timer
 	<div class="button" id="pick flowers" style="display: none;" onclick="gather()">
       pick flowers<br><small>+1 fresh flower, +???</small></div>
 
-	<div class="button" id="dry flowers" style="display: none;" onclick="drying = !drying;">
-      dry flowers<br><small>-2/s fresh flowers, +1/s dried flowers</small></div>
-
     <div class="button" id="make a flower crown" style="display: none;" onclick="buy_flower_crown();">
       make a flower crown<br><small>-20 fresh flowers, +1 flower crown</small></div>
+
+	<div class="button" id="dry flowers" style="display: none;" onclick="drying = !drying;">
+      dry flowers<br><small>-2/s fresh flowers, +1/s dried flowers</small></div>
 
 
   <!-- Attribution Footer -->
@@ -212,6 +225,7 @@ window.setInterval(function () { // the game timer
     <span class="color" style="color:#928573;">⬤</span>
     <span class="color" style="color:#FCD917;">⬤</span>
     <span class="color" style="color:#483131;">⬤</span> August 2017
+    Wildflower Hill v0.6.5
   </div>
 
 </body>
