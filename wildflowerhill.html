@@ -25,6 +25,8 @@
       background-color: hsl(90, 25%, 75%);
       border: 1px solid hsl(90, 15%, 40%);
       height: 6em;
+			width: 60%;
+			margin: auto;
       padding: 0 .5em .5em .5em;
       overflow: auto;
       text-align: left;
@@ -84,14 +86,14 @@
 <script>
 	
 var clock = 0; // game tick controller
+var menuOpen = false;
 var meditationCost = 10; // use to unlock elements
-var story = 0;
+var story = 0; // updates narrative? does nothing currently
 var earthMagic = 0; // spell currency
 var freshFlowers = 0; // material
 var driedFlowers = 0; // material
 var drying = false; // toggle
 var flowerCrowns = 0;
-  
 
 
 function gather() { // generate free flowers on click
@@ -137,8 +139,8 @@ function buy_flower_crown() {
 function unlock(element) {document.getElementById(element).style.display = "inline-block";}
 
 
-window.setInterval(function () { // the game timer
-
+window.setInterval(function () { //          ~~~ [[MAIN GAME TIMER FUNCTION]] ~~~
+  devMode(); // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-      remove before shipping
   clock++;
   if (clock == 20) { // things that go per second
     clock = 0;
@@ -167,8 +169,9 @@ window.setInterval(function () { // the game timer
   
 <body>
 	<h1>Wildflower Hill</h1>
-  
-    <div id="menu">menu</div>
+	
+    <div id="menu" onclick="!menuOpen;"></div>
+    <div id="gender" style="display: none;"></div>
   
 	<p id="message">...</p> <!-- narrative/notification area -->
   
@@ -225,7 +228,7 @@ window.setInterval(function () { // the game timer
     <span class="color" style="color:#928573;">⬤</span>
     <span class="color" style="color:#FCD917;">⬤</span>
     <span class="color" style="color:#483131;">⬤</span> August 2017
-    Wildflower Hill v0.6.5
+    Wildflower Hill v0.6.6
   </div>
 
 </body>
