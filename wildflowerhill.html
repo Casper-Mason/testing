@@ -82,7 +82,9 @@ var freshFlowers = 0; // material
 var driedFlowers = 0; // material
 var drying = false; // toggle
 var flowerCrowns = 0;
-	
+  
+
+
 function gather() { // generate free flowers on click
   freshFlowers++;
   unlock("fresh flowers");
@@ -124,7 +126,9 @@ function buy_flower_crown() {
   
 function unlock(element) {document.getElementById(element).style.display = "inline-block";}
 
+
 window.setInterval(function () { // the game timer
+
   clock++;
   if (clock == 20) { // things that go per second
     clock = 0;
@@ -153,7 +157,7 @@ window.setInterval(function () { // the game timer
   
 <body>
 	<h1>Wildflower Hill</h1>
-	<h5> (-@ ,@) .oO( v0.6.4 )</h2>
+	<h5> (-@ ,@) .oO( v0.6.5 )</h2>
 	
 	<p id="message">...</p> <!-- narrative/notification area -->
   
