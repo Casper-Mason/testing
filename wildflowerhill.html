@@ -8,7 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   
   
-  <!--                                        [The CSS section]                                    -->
+  <!--                                           [The CSS section]                                    -->
   
   
   <style>
@@ -69,54 +69,94 @@
   </style>
   
   
-</head> <!--                                  [The Javascript section]                                    -->
+</head> <!--                                  [The Javascript section]                               -->
   
   
 <script>
 	
-var earthEnergy = 0; // used to convert into earthMagic over time
+var clock = 0; // game tick controller
+var meditationCost = 1; // use to unlock elements
+var story = 0;
 var earthMagic = 0; // spell currency
 var freshFlowers = 0; // material
 var driedFlowers = 0; // material
 var drying = false; // toggle
+var flowerCrowns = 0;
 	
 function gather() { // generate free flowers on click
-	freshFlowers += 1;
-	document.getElementById("fresh flower count").innerHTML = freshFlowers;
+  freshFlowers++;
+  unlock("fresh flowers");
+  document.getElementById("fresh flower count").innerHTML = freshFlowers;
 }
+  
+function meditate() { // Akin to "research" in other games. Unlocks new elements.
+  
+  if (earthMagic >= meditationCost) {
+    switch(story) {
+      case 0:
+        unlock("pick flowers"); unlock("fresh flowers");
+        break;
+      case 1:
+        unlock("dry flowers"); unlock("dried flowers");
+        break;
+      case 2:
+        unlock("make a flower crown");
+        break;
+    }
+  
+    earthMagic -= meditationCost;
+    meditationCost += 1;
+    story++;
+  }
+}
+  
+function buy_flower_crown() {
+  var cost = 5;
+  if (freshFlowers >= cost){
+    unlock("flower crown");
+    freshFlowers -= cost;
+    flowerCrowns++;
+    document.getElementById("flower crowns").innerHTML = flowerCrowns;
+    document.getElementById("make a flower crown").style.display = "none";
+  }
+}
+  
   
 function unlock(element) {document.getElementById(element).style.display = "inline-block";}
 
 window.setInterval(function () { // the game timer
-  earthEnergy++;
-  if (earthEnergy == 1) {earthMagic++; earthEnergy = 0;}
-  if (earthMagic > 4) {unlock("pick flowers");}
-
-  if (freshFlowers > 1 && drying == true) {driedFlowers++; freshFlowers -= 2;}
+  clock++;
+  if (clock == 20) { // things that go per second
+    clock = 0;
+    earthMagic++;
+    if (freshFlowers > 1 && drying == true) {driedFlowers++; freshFlowers -= 2;}
+    earthMagic += flowerCrowns;
+    
+  }
   
   if (freshFlowers > 9) {document.getElementById("message").innerHTML = "You made it to ten!";}
   if (freshFlowers > 49) {document.getElementById("message").innerHTML = "This is getting serious :O";}
   if (freshFlowers > 99) {document.getElementById("message").innerHTML = "Hello Babette! :D";}
 
   document.getElementById("earth magic count").innerHTML = earthMagic;
+  document.getElementById("meditation cost").innerHTML = meditationCost;
   document.getElementById("fresh flower count").innerHTML = freshFlowers;
   document.getElementById("dried flower count").innerHTML = driedFlowers;
   
-  storytime();
-	
-}, 1000);
+}, 50);
 	
 </script>
   
   
-  <!--                                  [The HTML body section]                                    -->
+  <!--                                      [The HTML body section]                                    -->
   
   
 <body>
 	<h1>Wildflower Hill</h1>
-	<h5> (-@ ,@) .oO( v0.5.2 )</h2>
+	<h5> (-@ ,@) .oO( v0.6.3 )</h2>
 	
 	<p id="message">...</p> <!-- narrative/notification area -->
+  
     <p>You stand in the grassy plains, your forest home an hour's walk behind you.
       It's summer. A warm breeze ruffles your ragged clothes and straw hat.
       You smile and hum in the strong ambient magic.</p>
@@ -126,25 +166,39 @@ window.setInterval(function () { // the game timer
     <br> <!-- Material Inventory -->
   
     <div id="materials" style="border:none; text-align:center; ">
+      
       <p><span id="earth magic count">0</span></br>earth magic</p>
-      <p><span id="fresh flower count">0</span></br>fresh flowers</p>
-      <p><span id="dried flower count">0</span></br>dried flowers</p>
+  
+      <p id="fresh flowers" style="display: none;">
+        <span id="fresh flower count">0</span></br>fresh flowers</p>
+
+      <p id="dried flowers" style="display: none;">
+        <span id="dried flower count">0</span></br>dried flowers</p>
 
     </div>
 
     <br> <!-- Generator Inventory -->
 
     <div id="generators">
-      <p>flower crown<br><small><em>earth magic speed +1</em></small></p>
+
+      <p id="flower crown" style="display: none;">
+        flower crown<br><small><em>earth magic +<span id="flower crowns">1</span>/s</em></small></p>
+
     </div>
 
     <br> <!-- Button Inventory -->
 
-	<div class="button" id="pick flowers" style="display: none;" onclick="gather()">
-      pick flowers (+1)</div>
-	<div class="button" onclick="drying = !drying;">
-      set flowers to dry (2⇾1)</div>
+    <div class="button" id="meditate" onclick="meditate()">
+      meditate<br><small>costs <span id="meditation cost">0</span> earth magic</small></div>
 
+	<div class="button" id="pick flowers" style="display: none;" onclick="gather()">
+      pick flowers<br><small>+1 fresh flower, +???</small></div>
+
+	<div class="button" id="dry flowers" style="display: none;" onclick="drying = !drying;">
+      dry flowers<br><small>-2/s fresh flowers, +1/s dried flowers</small></div>
+
+    <div class="button" id="make a flower crown" style="display: none;" onclick="buy_flower_crown();">
+      make a flower crown<br><small>-20 fresh flowers, +1 flower crown</small></div>
 
 
   <!-- Attribution Footer -->
