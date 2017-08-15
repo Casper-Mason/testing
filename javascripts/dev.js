@@ -1,0 +1,3 @@
+function devMode() {
+    return;
+  }
