@@ -95,6 +95,26 @@ var driedFlowers = 0; // material
 var drying = false; // toggle
 var flowerCrowns = 0;
 
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- devmode -=-=-=-=-=- vvv
+var devmode = false;
+
+function devUnlock(element) {
+  unlock(element);
+  document.getElementById(element).style.opacity = ".3";
+
+}
+  
+function devMode() {
+  if (devmode == true) {
+    if (earthMagic < 100) {earthMagic = 1000000;}
+    devUnlock("pick flowers");
+    devUnlock("dry flowers");
+    devUnlock("make a flower crown");
+    devUnlock("flower crown");
+    devUnlock("gender")
+  }
+}
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- end dev mode -=-=- ^^^^
 
 function gather() { // generate free flowers on click
   freshFlowers++;
