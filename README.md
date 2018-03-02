@@ -1,4 +1,4 @@
-# Casper's Web Sandbox
+# Web Sandbox
 This is a testing grounds for me learning javascript and stuff.
 
 Currently the plan is to make a simple breeding game.
